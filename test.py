@@ -1,4 +1,3 @@
-import numpy as np
 M = int(input("Podaj ilość strumieni ruchu M: "))
 a = []
 t = []
