@@ -22,13 +22,13 @@ while(1):
     for i in range(0, V+1):
         print("x"+format(i)+": "+format(x[i]), end = ' ')
     print("\n")
-    def calc_P0(x):
+    def calc_P0(x): #wyliczanie P0
         summaryX = 0 
         for i in x:
             summaryX += i
         return 1/summaryX
     
-    def calc_Pn(x, V, M, a, t) :
+    def calc_Pn(x, V, M, a, t) : #wyliczanie kolejnych prawdopodobieństw P, poza P0
         P[0] = calc_P0(x)
         for n  in range(1, V+1 ):
             P[n] = (P[0] * x[n])
@@ -38,7 +38,7 @@ while(1):
         print("P"+format(i)+": "+format(P[i]), end = ' ')
     print("\n")
     
-    def calc_bi(P, V, t, i):
+    def calc_bi(P, V, t, i): #wyliczenie prawdopodobieństwa blokady strumnienia zgłoszeń klasy i
         summary = 0 
         for n in range( V-t[i-1]+1, V+1):
             summary += P[n]
