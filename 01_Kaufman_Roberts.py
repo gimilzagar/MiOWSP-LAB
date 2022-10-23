@@ -5,7 +5,7 @@ while(1):
     t = []
     for i in range(1, M+1): 
         a.append(float(input("podaj ruch oferowany - a"+format(i)+": ")))
-        t.append(int(input("podaj ruch oferowany - t"+format(i)+": ")))
+        t.append(int(input("podaj liczbe żądanych jednostek przetważania - t"+format(i)+": ")))
     V = int(input("Podaj pojemność wiązki V: "))
     x = [1]*(V+1) #tablica x 
     P =[1] * (V+1) #tablica P 
@@ -28,7 +28,7 @@ while(1):
             summaryX += i
         return 1/summaryX
     
-    def calc_Pn(x, V, M, a, t) : #wyliczanie kolejnych prawdopodobieństw znalezienia się wiązki doskonałej w stanie zajętości n kanałów - P(n), poza P0
+    def calc_Pn(x, V, M, a, t) : #wyliczanie kolejnych prawdopodobieństw P, poza P0
         P[0] = calc_P0(x)
         for n  in range(1, V+1 ):
             P[n] = (P[0] * x[n])
